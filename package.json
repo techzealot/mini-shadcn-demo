@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
@@ -53,7 +54,10 @@
     "vite": "^6.0.1",
     "vite-tsconfig-paths": "^5.1.4"
   },
-  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
