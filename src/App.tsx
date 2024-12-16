@@ -1,9 +1,9 @@
+import { Button } from "@/components/button";
+
 function App() {
   return (
     <>
-      <div className="flex justify-center text-lg font-bold text-red-500">
-        hello world
-      </div>
+      <Button>Hello World</Button>
     </>
   );
 }
