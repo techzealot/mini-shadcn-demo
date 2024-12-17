@@ -6,6 +6,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
 
+//ignore
 interface TextProps extends ComponentPropsWithRef<"div"> {
   asChild?: boolean;
 }
