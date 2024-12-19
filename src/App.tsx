@@ -4,6 +4,14 @@ import {
 } from "react";
 
 import { Button } from "@/components/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/card";
 import Text, {
   Blockquote,
   Code,
@@ -50,6 +58,20 @@ function App() {
       <Text className="text-lg font-bold">
         This is a customized text component!
       </Text>
+      <Card className="mx-auto w-1/5">
+        <CardHeader>
+          <CardTitle>Card Title</CardTitle>
+          <CardDescription>Card Description</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>Card Content</p>
+          <p>Card Content</p>
+        </CardContent>
+        <CardFooter className="justify-between">
+          <p>Card Footer</p>
+          <p>Card Footer</p>
+        </CardFooter>
+      </Card>
     </>
   );
 }
