@@ -12,6 +12,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/card";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/dialog";
 import Text, {
   Blockquote,
   Code,
@@ -72,6 +82,28 @@ function App() {
           <p>Card Footer</p>
         </CardFooter>
       </Card>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button>Open Dialog</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogDescription>
+              This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button>Ok</Button>
+            <DialogClose asChild>
+              <Button className="bg-rose-600/50 hover:bg-rose-600/80">
+                Cancel
+              </Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
