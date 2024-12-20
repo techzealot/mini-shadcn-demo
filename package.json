@@ -1,13 +1,30 @@
 {
-  "name": "mini-shadcn-demo",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@techzealot/mini-shadcn-ui",
+  "version": "0.1.0",
+  "private": false,
   "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/mini-shadcn-ui.css",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./style.css": "./dist/mini-shadcn-ui.css"
+  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "ci": "act -s GITHUB_TOKEN=$(gh auth token)",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build",
+    "build:lib": "tsc && vite build --config vite.lib.config.ts",
+    "prepublishOnly": "pnpm build:lib",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -20,11 +37,13 @@
     "clsx": "^2.1.1",
     "cva": "1.0.0-beta.2",
     "lucide-react": "^0.468.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "tailwind-merge": "^2.5.5",
     "tailwind-variants": "^0.3.0",
     "tailwindcss-animate": "^1.0.7"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
@@ -56,11 +75,30 @@
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.15.0",
     "vite": "^6.0.1",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vite-plugin-dts": "^4.4.0",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "engines": {
     "node": ">=20.0.0",
     "pnpm": ">=9.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "shadcn",
+    "tailwindcss"
+  ],
+  "author": "techzealot",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techzealot/mini-shadcn-demo"
   },
   "eslintConfig": {
     "extends": [
