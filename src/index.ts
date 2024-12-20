@@ -1,6 +1,3 @@
-//导入全局样式
-import './index.css'
-
 //重新导出所有组件
 export * from './components/button'
 export * from './components/card'
