@@ -39,7 +39,7 @@ export default defineConfig({
     emptyOutDir: true,
     // Reduce bloat from legacy polyfills.
     target: 'esnext',
-    // Leave minification up to applications.
-    minify: true,
+    // 不要开启,否则css变量会被直接替换,用户无法通过css变量覆盖定制主题
+    minify: false,
   },
 })
