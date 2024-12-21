@@ -2,8 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
-import tailwindcss from 'tailwindcss'
-import autoprefixer from 'autoprefixer'
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 export default defineConfig({
@@ -20,14 +18,7 @@ export default defineConfig({
       '@': resolve(__dirname, './src')
     }
   },
-  css: {
-    postcss: {
-      plugins: [
-        tailwindcss,
-        autoprefixer,
-      ],
-    }
-  },
+  //无需配置postcss配置,会自动读取工程下的postcss.config.js
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
@@ -41,7 +32,7 @@ export default defineConfig({
         globals: {
           'react': 'React',
           'react-dom': 'ReactDOM',
-        },
+        }
       },
     },
     sourcemap: true,
@@ -49,6 +40,6 @@ export default defineConfig({
     // Reduce bloat from legacy polyfills.
     target: 'esnext',
     // Leave minification up to applications.
-    minify: false,
+    minify: true,
   },
 })

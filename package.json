@@ -6,7 +6,6 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "style": "dist/mini-shadcn-ui.css",
   "files": [
     "dist"
   ],
@@ -15,8 +14,7 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    },
-    "./style.css": "./dist/mini-shadcn-ui.css"
+    }
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
